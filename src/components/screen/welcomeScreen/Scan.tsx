@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, View, Image } from 'react-native'
 import React from 'react'
 
 const Scan = () => {
@@ -9,13 +9,13 @@ const Scan = () => {
             <Image
                 resizeMode='contain'
                 style={styles.imageScan}
-                source={require('../../../assets/images/frame16.png')}
+                source={require('../../../../assets/images/frame16.png')}
             />
 
             <Image
                 style={styles.imageArrow}
                 resizeMode='contain'
-                source={require('../../../assets/images/frame.png')}
+                source={require('../../../../assets/images/frame.png')}
             />
         </View>
     )

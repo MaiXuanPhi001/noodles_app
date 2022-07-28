@@ -1,10 +1,12 @@
 import React from 'react'
-import Welcome from './src/components/WelcomeScreen/Welcome'
+import NaivgationContainer from './src/components/navigation/NaivgationContainer'
 
-export default function App() {
+const App = () => {
   return (
-    <Welcome />
+    <NaivgationContainer />
   )
 }
+
+export default App
 
 

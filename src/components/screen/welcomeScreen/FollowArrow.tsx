@@ -7,7 +7,7 @@ const FollowArrow = () => {
             <Image
                 resizeMode='contain'
                 style={styles.imageScan}
-                source={require('../../../assets/images/scan.png')}
+                source={require('../../../../assets/images/scan.png')}
             />
             <Text style={styles.textFollow}>Follow the arrow to scan card</Text>
         </View>

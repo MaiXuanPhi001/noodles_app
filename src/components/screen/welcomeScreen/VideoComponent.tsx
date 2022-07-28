@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native'
-import { Video, AVPlaybackStatus } from 'expo-av'
+import { Video } from 'expo-av'
 import React, { useRef, useState } from 'react'
-import { Shadow } from 'react-native-shadow-2';
 
 export default function VideoComponent() {
     const video = useRef<any>(null)
@@ -15,7 +14,7 @@ export default function VideoComponent() {
                     ref={video}
                     resizeMode={coverVideo}
                     style={styles.video}
-                    source={require('../../../assets/videos/intro.mp4')}
+                    source={require('../../../../assets/videos/intro.mp4')}
                     onPlaybackStatusUpdate={status => setStatus(() => status)}
                     isLooping
                 />
@@ -28,7 +27,7 @@ export default function VideoComponent() {
                 >
                     <Image
                         style={[styles.imageButtonPlayVideo, { opacity: status.isPlaying ? 0 : 1 }]}
-                        source={require('../../../assets/images/playvideo.png')}
+                        source={require('../../../../assets/images/playvideo.png')}
                     />
                 </TouchableOpacity>
             </View>
