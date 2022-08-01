@@ -14,7 +14,7 @@ export default function VideoComponent() {
                     ref={video}
                     resizeMode={coverVideo}
                     style={styles.video}
-                    source={require('../../../../assets/videos/intro.mp4')}
+                    source={require('@videos/intro.mp4')}
                     onPlaybackStatusUpdate={status => setStatus(() => status)}
                     isLooping
                 />
@@ -27,7 +27,7 @@ export default function VideoComponent() {
                 >
                     <Image
                         style={[styles.imageButtonPlayVideo, { opacity: status.isPlaying ? 0 : 1 }]}
-                        source={require('../../../../assets/images/playvideo.png')}
+                        source={require('@images/playvideo.png')}
                     />
                 </TouchableOpacity>
             </View>

@@ -1,5 +1,6 @@
 import React from 'react'
-import NaivgationContainer from './src/components/navigation/NaivgationContainer'
+import NaivgationContainer from '@components/navigation/NaivgationContainer'
+import Dao from '@components/screen/dao/Dao'
 
 const App = () => {
   return (

@@ -1,22 +1,27 @@
-import { StyleSheet, View, Image } from 'react-native'
+import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { navigate } from '@components/navigation/Navigation'
 
 const Scan = () => {
     return (
         <View style={styles.container}>
-            <View style={{width: 60}} />
+            <View style={{ width: 60 }} />
 
             <Image
                 resizeMode='contain'
                 style={styles.imageScan}
-                source={require('../../../../assets/images/frame16.png')}
+                source={require('@images/frame16.png')}
             />
 
-            <Image
-                style={styles.imageArrow}
-                resizeMode='contain'
-                source={require('../../../../assets/images/frame.png')}
-            />
+            <TouchableOpacity
+                onPress={() => navigate('Infomation', null)}
+            >
+                <Image
+                    style={styles.imageArrow}
+                    resizeMode='contain'
+                    source={require('@images/frame.png')}
+                />
+            </TouchableOpacity>
         </View>
     )
 }
