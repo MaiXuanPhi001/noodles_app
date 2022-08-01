@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 
-const FollowArrow = () => {
+const FollowArrow = (props: any) => {
+    const { marginTop } = props
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {marginTop: marginTop}]}>
             <Image
                 resizeMode='contain'
                 style={styles.imageScan}
@@ -24,10 +25,11 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     imageScan: {
-        width: 40
+        width: 40,
+        height: 40
     },
     container: {
         flexDirection: 'row',
         alignItems: 'center'
-    }
+    },
 })

@@ -2,9 +2,11 @@ import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { navigate } from '@components/navigation/Navigation'
 
-const Scan = () => {
+const Scan = (props: any) => {
+    const { marginTop } = props
+
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {marginTop: marginTop}]}>
             <View style={{ width: 60 }} />
 
             <Image
@@ -41,6 +43,5 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginTop: 25
     }
 })

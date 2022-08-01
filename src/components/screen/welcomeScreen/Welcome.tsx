@@ -1,7 +1,7 @@
 import Header from '@components/refactor/Header';
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, View, Button } from 'react-native';
-import FollowArrow from './FollowArrow';
-import Scan from './Scan';
+import FollowArrow from '../../refactor/FollowArrow';
+import Scan from '../../refactor/Scan';
 import VideoComponent from './VideoComponent';
 
 export default function Welcome() {
@@ -13,8 +13,8 @@ export default function Welcome() {
           urlImage={require('@images/welcome.png')}
         />
         <VideoComponent />
-        <FollowArrow />
-        <Scan />
+        <FollowArrow marginTop={50} />
+        <Scan marginTop={52} />
       </ImageBackground>
     </ScrollView>
   )
