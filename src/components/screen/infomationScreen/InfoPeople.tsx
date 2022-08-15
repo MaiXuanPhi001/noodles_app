@@ -1,7 +1,14 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const InfoPeople = () => {
+const InfoPeople = (props: any) => {
+  const { user } = props
+
+  const birthDay = (date: string) => {
+    const [year, month, day] = date.split('-');
+    return [month, day, year].join('/');
+  }
+
   return (
     <ImageBackground
       style={styles.imgBackground}
@@ -10,7 +17,7 @@ const InfoPeople = () => {
     >
       <Image
         style={styles.avatar}
-        source={require('@images/frame3.png')}
+        source={{uri: user.img}}
         resizeMode='contain'
       />
 
@@ -22,10 +29,10 @@ const InfoPeople = () => {
       </View>
 
       <View>
-        <Text style={styles.textValue}>Alice Mie</Text>
-        <Text style={styles.textValue}>12/10/1999</Text>
-        <Text style={styles.textValue}>Female</Text>
-        <Text style={styles.textValue}>Design</Text>
+        <Text style={styles.textValue}>{user.fullName}</Text>
+        <Text style={styles.textValue}>{birthDay(user.birthday)}</Text>
+        <Text style={styles.textValue}>{user.gender}</Text>
+        <Text style={styles.textValue}>{user.department}</Text>
       </View>
     </ImageBackground>
   )

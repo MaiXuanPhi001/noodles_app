@@ -2,39 +2,33 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import ItemNoodles from './ItemNoodles'
 
-const db = {
-    id: 0,
-    name: 'abc',
-    noodles: [true, true, true]
-}
-
-const NoodlesChoose = () => {
-    const [data, setData] = useState(db)
+const NoodlesChoose = (props: any) => {
+    const { cart, setCart } = props
 
     return (
         <View style={styles.container}>
             <View style={styles.noodlesContainer}>
                 <ItemNoodles
-                    data={data}
-                    setData={setData}
-                    method={0}
+                    cart={cart}
+                    setCart={setCart}
+                    index={0}
                     noodlesImage={require('@images/noodles1.png')}
                 />
                 <ItemNoodles
-                    data={data}
-                    setData={setData}
-                    method={1}
+                    cart={cart}
+                    setCart={setCart}
+                    index={1}
                     noodlesImage={require('@images/noodles2.png')}
                 />
                 <ItemNoodles
-                    data={data}
-                    setData={setData}
-                    method={2}
+                    cart={cart}
+                    setCart={setCart}
+                    index={2}
                     noodlesImage={require('@images/noodles3.png')}
                 />
             </View>
             <Text style={styles.textContainer}>
-                <Text style={styles.textQuantity}>3</Text> cups of  noodles left this month
+                <Text style={styles.textQuantity}>{cart.filter((item: any) => item !== 0).length}</Text> cups of  noodles left this month
             </Text>
         </View>
     )

@@ -16,7 +16,7 @@ const Scan = (props: any) => {
             />
 
             <TouchableOpacity
-                onPress={() => navigate('Infomation', null)}
+                onPress={() => navigate('ScanQRCodeScreen', null)}
             >
                 <Image
                     style={styles.imageArrow}

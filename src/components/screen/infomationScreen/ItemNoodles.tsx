@@ -1,21 +1,28 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { UserContext } from '@components/context/UserContext'
 
 const ItemNoodles = (props: any) => {
-    const { data, method, noodlesImage } = props
-    const [choose, setChoose] = useState(false)
+    const { cart, setCart, index, noodlesImage } = props
+    const [choose, setChoose] = useState<boolean>(false)
 
     const choosenoodles = () => {
         setChoose(!choose)
+        if (choose === true) {
+            cart[index] = 1
+        } else {
+            cart[index] = 2
+        }
+        setCart(cart)
     }
 
     return (
         <TouchableOpacity
             onPress={choosenoodles}
-            disabled={!data.noodles[method]}
+            disabled={!cart[index]}
             style={styles.noodlesContainer}
         >
-            {(choose && data.noodles[method]) &&
+            {(cart[index] > 1) &&
                 <Image
                     style={styles.noodlesChoose}
                     source={require('@images/noodlesChoose.png')}
@@ -23,7 +30,7 @@ const ItemNoodles = (props: any) => {
                 />
             }
 
-            {data.noodles[method] ?
+            {cart[index] != 0 ?
                 <Image
                     style={styles.noodlesImage}
                     source={noodlesImage}
